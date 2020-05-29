@@ -1,57 +1,15 @@
 <template>
   <v-app>
-    <div>
-      <v-app-bar
-        color="deep-purple accent-4"
-        dense
-        dark
-      >
-        <div style="max-width: 1226px">
-          <v-app-bar-nav-icon/>
-
-          <v-toolbar-title>Page title</v-toolbar-title>
-
-          <v-spacer/>
-
-          <v-btn icon>
-            <v-icon>mdi-heart</v-icon>
-          </v-btn>
-
-          <v-btn icon>
-            <v-icon>mdi-magnify</v-icon>
-          </v-btn>
-
-          <v-menu
-            left
-            bottom
-          >
-            <template v-slot:activator="{ on }">
-              <v-btn icon v-on="on">
-                <v-icon>mdi-dots-vertical</v-icon>
-              </v-btn>
-            </template>
-
-            <v-list>
-              <v-list-item
-                v-for="n in 5"
-                :key="n"
-                @click="() => {}"
-              >
-                <v-list-item-title>Option {{ n }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </div>
-      </v-app-bar>
-    </div>
+    <app-bar />
     <v-content>
       <v-container>
-        <nuxt/>
+        <nuxt />
       </v-container>
     </v-content>
 
     <v-footer
       app
+      absolute
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
@@ -59,7 +17,9 @@
 </template>
 
 <script>
+import AppBar from '../components/core/AppBar'
 export default {
+  components: { AppBar },
   data () {
     return {
       clipped: false,
