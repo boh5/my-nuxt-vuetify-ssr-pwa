@@ -1,39 +1,44 @@
 <template>
   <v-app-bar
     app
-    flat
+    height="64"
+    dense
   >
-    <v-container class="mx-auto py-0">
-      <v-row align="center">
-        <v-img
-          src="/icon.png"
-          class="mr-5"
-          contain
-          height="48"
-          width="48"
-          max-width="48"
-        />
-        <v-btn
+    <v-container class="mx-auto py-0" style="height: 100%">
+      <v-tabs
+        height="64"
+      >
+        <nuxt-link to="/">
+          <v-img
+            src="/icon.png"
+            class="mr-5"
+            contain
+            height="64"
+            width="64"
+          />
+        </nuxt-link>
+        <v-tab
           v-for="(link, i) in links"
           :key="i"
           nuxt
           :to="link.to"
-          class="hidden-sm-and-down"
-          text
+          class="title hidden-sm-and-down"
         >
           {{ link.text }}
-        </v-btn>
-
-        <v-spacer />
+        </v-tab>
 
         <v-text-field
-          append-icon="mdi-magnify"
+          class="mx-4 align-center"
           flat
           hide-details
+          label="搜索APP"
+          prepend-inner-icon="mdi-magnify"
           solo-inverted
-          style="max-width: 300px"
         />
-      </v-row>
+        <v-icon class="mx-5" large @click="1">
+          mdi-account
+        </v-icon>
+      </v-tabs>
     </v-container>
   </v-app-bar>
 </template>
@@ -41,23 +46,31 @@
 <script>
 export default {
   name: 'AppBar',
-  data () {
-    return {
-      links: [
-        {
-          to: '/',
-          text: '主页'
-        },
-        {
-          to: '/free',
-          text: '最新限免'
-        }
-      ]
-    }
-  }
+  data: () => ({
+    links: [
+      {
+        to: '/',
+        text: '主页'
+      },
+      {
+        to: '/app/free',
+        text: '最新限免'
+      },
+      {
+        to: '/wishlist',
+        text: '愿望单'
+      },
+      {
+        to: '/about',
+        text: '关于我们'
+      }
+    ]
+  })
 }
 </script>
 
-<style scoped>
-
+<style>
+.v-slide-group__prev {
+  display: none !important;
+}
 </style>

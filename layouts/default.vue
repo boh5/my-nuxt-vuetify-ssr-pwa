@@ -6,20 +6,17 @@
         <nuxt />
       </v-container>
     </v-content>
-
-    <v-footer
-      app
-      absolute
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    <Footer />
+    <ToolBar />
   </v-app>
 </template>
 
 <script>
 import AppBar from '../components/core/AppBar'
+import Footer from '../components/core/Footer'
+import ToolBar from '../components/core/ToolBar'
 export default {
-  components: { AppBar },
+  components: { ToolBar, Footer, AppBar },
   data () {
     return {
       clipped: false,
