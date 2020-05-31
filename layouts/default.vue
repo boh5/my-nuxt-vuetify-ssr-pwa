@@ -42,3 +42,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.v-slide-group__prev {
+  display: none !important;
+}
+</style>

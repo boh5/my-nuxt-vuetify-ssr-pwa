@@ -4,7 +4,7 @@
     height="64"
     dense
   >
-    <v-container class="mx-auto py-0" style="height: 100%">
+    <v-container class="py-0" style="height: 100%">
       <v-tabs
         height="64"
       >
@@ -34,8 +34,9 @@
           label="搜索APP"
           prepend-inner-icon="mdi-magnify"
           solo-inverted
+          style="max-width: 300px"
         />
-        <v-icon class="mx-5" large @click="1">
+        <v-icon class="mx-5 float-right" large @click="1">
           mdi-account
         </v-icon>
       </v-tabs>
@@ -69,8 +70,6 @@ export default {
 }
 </script>
 
-<style>
-.v-slide-group__prev {
-  display: none !important;
-}
+<style scoped>
+
 </style>

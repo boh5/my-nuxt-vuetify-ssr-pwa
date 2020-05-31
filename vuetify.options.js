@@ -14,13 +14,13 @@ export default {
         success: colors.green.accent3
       },
       light: {
-        primary: '#ff6666',
-        secondary: '#e91e63',
-        accent: '#9c27b0',
-        error: '#ff5722',
-        warning: '#3f51b5',
-        info: '#03a9f4',
-        success: '#4caf50'
+        primary: '#fe696a',
+        secondary: '#f3f5f9',
+        accent: '#4e54c8',
+        error: '#f34770',
+        warning: '#fea569',
+        info: '#69b3fe',
+        success: '#42d697'
       }
     }
   }
